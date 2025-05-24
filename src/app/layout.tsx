@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import NavBarWrapper from "@/components/NavBarWrapper";
+import SideBarWrapper from "@/components/SideBarWrapper";
 import ToastProvider from "@/components/ToastProvider";
 
 const geistSans = Geist({
@@ -37,7 +37,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ToastProvider/>
-          <NavBarWrapper>{children}</NavBarWrapper>
+          <SideBarWrapper>{children}</SideBarWrapper>
         </ThemeProvider>
       </body>
     </html>
