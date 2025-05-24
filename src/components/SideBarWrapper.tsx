@@ -29,7 +29,7 @@ export default function SideBarWrapper({ children }: { children: React.ReactNode
         <div className="flex min-h-screen">
           <AppSidebar />
           <div className="flex-1 flex flex-col">
-            <header className="sticky top-0 z-10 bg-background px-4 py-2 flex items-center">
+            <header className="sticky px-4 py-2 flex items-center">
               <SidebarTrigger size="lg" className="mr-4 cursor-pointer" />
             </header>
             <main className="flex-1 p-4 overflow-auto">

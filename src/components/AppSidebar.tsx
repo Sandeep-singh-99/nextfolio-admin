@@ -9,7 +9,7 @@ import {
   SidebarMenuButton,
   SidebarGroupLabel,
 } from "./ui/sidebar";
-import { User, Settings, LogOut, Sun, Moon, Monitor } from "lucide-react";
+import { LogOut, Sun, Moon, Monitor, UserCircle2, LayoutDashboardIcon, Projector, Package2Icon, Contact2Icon, Home, HeartOffIcon, Sparkles, UserCheck, Code } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -44,7 +44,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="text-3xl font-bold text-gray-900 dark:text-white py-6 px-4 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-700 dark:to-purple-800 bg-clip-text">
-            <Link href={"/dashboard"}>ADMIN.</Link>
+            ADMIN.
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -53,10 +53,10 @@ export function AppSidebar() {
                   asChild
                   className="hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg"
                 >
-                  <a href="/profile" className="flex items-center">
-                    <User className="mr-3 h-5 w-5 text-gray-600 dark:text-gray-300" />
-                    <span className="font-medium">Profile</span>
-                  </a>
+                  <Link href="/dashboard" className="flex items-center">
+                    <LayoutDashboardIcon className="mr-3 h-5 w-5 text-gray-600 dark:text-gray-300" />
+                    <span className="font-medium">Dashboard</span>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
@@ -64,19 +64,61 @@ export function AppSidebar() {
                   asChild
                   className="hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg"
                 >
-                  <a href="/settings" className="flex items-center">
-                    <Settings className="mr-3 h-5 w-5 text-gray-600 dark:text-gray-300" />
-                    <span className="font-medium">Settings</span>
-                  </a>
+                  <Link href="/hero" className="flex items-center">
+                    <UserCheck className="mr-3 h-5 w-5 text-gray-600 dark:text-gray-300" />
+                    <span className="font-medium">Hero</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  className="hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg"
+                >
+                  <Link href="/about" className="flex items-center">
+                    <UserCircle2 className="mr-3 h-5 w-5 text-gray-600 dark:text-gray-300" />
+                    <span className="font-medium">About</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  className="hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg"
+                >
+                  <Link href="/skill" className="flex items-center">
+                    <Code className="mr-3 h-5 w-5 text-gray-600 dark:text-gray-300" />
+                    <span className="font-medium">Skill</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  className="hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg"
+                >
+                  <Link href="/project" className="flex items-center">
+                    <Package2Icon className="mr-3 h-5 w-5 text-gray-600 dark:text-gray-300" />
+                    <span className="font-medium">Project</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  className="hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg"
+                >
+                  <Link href="/contact" className="flex items-center">
+                    <Contact2Icon className="mr-3 h-5 w-5 text-gray-600 dark:text-gray-300" />
+                    <span className="font-medium">Contact</span>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               {/* Enhanced Theme Toggle Dropdown */}
               <SidebarMenuItem>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <SidebarMenuButton
-                      className="group relative flex items-center justify-between hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg"
-                    >
+                    <SidebarMenuButton className="group relative flex items-center justify-between hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg">
                       <div className="flex items-center">
                         {theme === "light" ? (
                           <Sun className="mr-3 h-5 w-5 text-gray-600 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
@@ -87,7 +129,9 @@ export function AppSidebar() {
                         )}
                         <span className="font-medium">Theme</span>
                       </div>
-                      <span className="text-xs text-gray-500 dark:text-gray-400 capitalize">{theme}</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400 capitalize">
+                        {theme}
+                      </span>
                     </SidebarMenuButton>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
@@ -124,7 +168,10 @@ export function AppSidebar() {
                   asChild
                   className="hover:bg-red-100 dark:hover:bg-red-900/50 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200 rounded-lg"
                 >
-                  <button onClick={() => handleLogout()} className="flex cursor-pointer items-center">
+                  <button
+                    onClick={() => handleLogout()}
+                    className="flex cursor-pointer items-center"
+                  >
                     <LogOut className="mr-3 h-5 w-5 text-red-500 dark:text-red-400" />
                     <span className="font-medium">Sign Out</span>
                   </button>
